@@ -1,0 +1,14 @@
+use_frameworks!
+
+target 'AMRSA_Example' do
+  pod 'AMRSA', :path => '../'
+
+  target 'AMRSA_Tests' do
+    inherit! :search_paths
+
+    pod 'Specta'
+  pod 'Expecta'
+  pod 'FBSnapshotTestCase'
+  pod 'Expecta+Snapshots'
+  end
+end
