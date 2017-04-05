@@ -1,0 +1,6 @@
+framework module Pods_AMRSA_Tests {
+  umbrella header "Pods-AMRSA_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

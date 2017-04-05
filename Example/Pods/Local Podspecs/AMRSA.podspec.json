@@ -1,0 +1,22 @@
+{
+  "name": "AMRSA",
+  "version": "0.1.0",
+  "summary": "A short description of AMRSA.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/liuxu5/AMRSA",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "liuxu5": "liuxu5@vipkid.com.cn"
+  },
+  "source": {
+    "git": "https://github.com/liuxu5/AMRSA.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "AMRSA/Classes/**/*"
+}

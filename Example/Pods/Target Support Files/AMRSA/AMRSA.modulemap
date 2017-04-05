@@ -1,0 +1,6 @@
+framework module AMRSA {
+  umbrella header "AMRSA-umbrella.h"
+
+  export *
+  module * { export * }
+}
