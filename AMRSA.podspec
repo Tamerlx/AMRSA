@@ -34,8 +34,8 @@ Pod::Spec.new do |s|
   s.author           = { 'LiuToTo' => '526902870@qq.com' }
   s.source           = { :git => 'https://github.com/LiuToTo/AMRSA.git', :tag => s.version.to_s }
   s.ios.deployment_target = '7.0'
-  s.ios.source_files        = 'AMRSA/Classes/include/openssl/*.h'
-  s.ios.public_header_files = 'AMRSA/Classes/include/openssl/*.h'
+s.ios.source_files        = 'AMRSA/Classes/include/openssl/**/*.{h,m}'
+  s.ios.public_header_files = 'AMRSA/Classes/include/openssl/**/*.h'
   s.ios.header_dir          = 'openssl'
   s.ios.preserve_paths      = 'AMRSA/Classes/lib/libcrypto.a', 'AMRSA/Classes/lib/libssl.a'
   s.ios.vendored_libraries  = 'AMRSA/Classes/lib/libcrypto.a', 'AMRSA/Classes/lib/libssl.a'
