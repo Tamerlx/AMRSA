@@ -7,6 +7,10 @@
 //
 
 #import "AMViewController.h"
+#import "AMRSAKeyPaire.h"
+#import "AMRSAKey.h"
+#import "AMRSAKeyPaireGenerator+Openssl.h"
+#import "AMRSASecurity.h"
 
 @interface AMViewController ()
 
@@ -17,7 +21,35 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    NSString *rawText = @"这是我的测试数据#@¥#@%……&123abc";
+    // generate key paire
+    [[AMRSAKeyPaireGenerator defaultGenerator] asyncGenerate:2048 privTag:@"com.amer.private.as" pubTag:@"com.amer.public.as" callback:^(BOOL success, AMRSAKeyPaire * _Nullable keyPaire, NSError * _Nullable error)
+     {
+         if (success) {
+             // encrypt by public key
+             [AMRSASecurity encrypt:rawText pubKey:keyPaire.publicKey completed:^(BOOL success, id ret, NSError *error)
+              {
+                  NSLog(@"ciphertext: %@ \n",ret);
+                  // decrypt by private key
+                  [AMRSASecurity decrypt:ret priKey:keyPaire.privateKey completed:^(BOOL success, id ret, NSError *error) {
+                      NSLog(@"cleartext: %@ \n",ret);
+                  }];
+              }];
+             
+             // sign by private key
+             [AMRSASecurity sign:rawText priKey:keyPaire.privateKey completed:^(BOOL success, id ret, NSError *error)
+              {
+                  if (success) {
+                      // verify by public key
+                      [AMRSASecurity verify:ret raw:rawText  pubKey:keyPaire.publicKey  completed:^(BOOL verified, NSError * _Nonnull error)
+                       {
+                           NSLog(@"isVerified: %d \n",verified);
+                       }];
+                  }
+              }];
+         }
+     }];
+    
 }
 
 - (void)didReceiveMemoryWarning

@@ -1866,12 +1866,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/AMRSA/AMRSA-prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Private\"",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"/Users/vip-liuxu/demospace/AMRSA/AMRSA/Classes",
-					"$(PROJECT_DIR)/",
-				);
+				HEADER_SEARCH_PATHS = "/Users/vip-liuxu/demospace/AMRSA/AMRSA/Classes/include";
 				INFOPLIST_FILE = "Target Support Files/AMRSA/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -1919,7 +1914,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Users/vip-liuxu/demospace/AMRSA/AMRSA/Classes/include";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LIBRARY_SEARCH_PATHS = "/Users/vip-liuxu/demospace/AMRSA/AMRSA/Classes/lib";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
@@ -1943,12 +1940,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREFIX_HEADER = "Target Support Files/AMRSA/AMRSA-prefix.pch";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Private\"",
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"/Users/vip-liuxu/demospace/AMRSA/AMRSA/Classes",
-					"$(PROJECT_DIR)/",
-				);
+				HEADER_SEARCH_PATHS = "/Users/vip-liuxu/demospace/AMRSA/AMRSA/Classes/include";
 				INFOPLIST_FILE = "Target Support Files/AMRSA/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -2000,7 +1992,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "/Users/vip-liuxu/demospace/AMRSA/AMRSA/Classes/include";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LIBRARY_SEARCH_PATHS = "/Users/vip-liuxu/demospace/AMRSA/AMRSA/Classes/lib";
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
