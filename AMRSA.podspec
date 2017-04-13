@@ -34,10 +34,41 @@ Pod::Spec.new do |s|
   s.author           = { 'LiuToTo' => '526902870@qq.com' }
   s.source           = { :git => 'https://github.com/LiuToTo/AMRSA.git', :tag => s.version.to_s }
   s.ios.deployment_target = '7.0'
-s.ios.source_files        = 'AMRSA/Classes/include/openssl/**/*.{h,m}'
-  s.ios.public_header_files = 'AMRSA/Classes/include/openssl/**/*.h'
-  s.ios.header_dir          = 'openssl'
-  s.ios.preserve_paths      = 'AMRSA/Classes/lib/libcrypto.a', 'AMRSA/Classes/lib/libssl.a'
-  s.ios.vendored_libraries  = 'AMRSA/Classes/lib/libcrypto.a', 'AMRSA/Classes/lib/libssl.a'
 
+  s.subspec 'error' do |error|
+    error.ios.source_files        = 'AMRSA/Classes/error/*.{h,m}'
+    error.ios.public_header_files = 'AMRSA/Classes/error/*.h'
+  end
+
+  s.subspec 'openssl' do |ol|
+    ol.ios.source_files        = 'AMRSA/Classes/openssl/include/openssl/*.{h,m}'
+    ol.ios.public_header_files = 'AMRSA/Classes/openssl/include/openssl/*.h'
+    ol.ios.header_dir          = 'openssl'
+    ol.ios.preserve_paths      = 'AMRSA/Classes/openssl/lib/libcrypto.a', 'AMRSA/Classes/openssl/lib/libssl.a'
+    ol.ios.vendored_libraries  = 'AMRSA/Classes/openssl/lib/libcrypto.a', 'AMRSA/Classes/openssl/lib/libssl.a'
+  end
+
+  s.subspec 'cipher' do |cipher|
+    cipher.ios.source_files        = 'AMRSA/Classes/cipher/*.{h,m}'
+    cipher.ios.public_header_files = 'AMRSA/Classes/cipher/*.h'
+    cipher.dependency 'AMRSA/error'
+  end
+
+  s.subspec 'kernel' do |kernel|
+    kernel.ios.source_files        = 'AMRSA/Classes/kernel/*.{h,m}'
+    kernel.ios.public_header_files = 'AMRSA/Classes/kernel/*.h'
+    kernel.dependency 'AMRSA/error'
+    kernel.dependency 'AMRSA/cipher'
+  end
+
+  s.subspec 'extension' do |ext|
+    ext.ios.source_files        = 'AMRSA/Classes/extension/*.{h,m}'
+    ext.ios.public_header_files = 'AMRSA/Classes/extension/*.h'
+    ext.dependency 'AMRSA/error'
+    ext.dependency 'AMRSA/cipher'
+    ext.dependency 'AMRSA/openssl'
+    ext.dependency 'AMRSA/kernel'
+  end
+
+  s.frameworks = 'Security'
 end
