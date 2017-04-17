@@ -1,35 +1,33 @@
 PODS:
-  - AMRSA (0.1.0)
-  - Expecta (1.0.5)
-  - Expecta+Snapshots (3.1.1):
-    - Expecta (~> 1.0)
-    - FBSnapshotTestCase/Core (~> 2.0)
-    - Specta (~> 1.0)
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
-  - Specta (1.0.6)
+  - AMRSA (1.0.3):
+    - AMRSA/cipher (= 1.0.3)
+    - AMRSA/error (= 1.0.3)
+    - AMRSA/extension (= 1.0.3)
+    - AMRSA/kernel (= 1.0.3)
+    - AMRSA/openssl (= 1.0.3)
+  - AMRSA/cipher (1.0.3):
+    - AMRSA/error
+  - AMRSA/error (1.0.3)
+  - AMRSA/extension (1.0.3):
+    - AMRSA/cipher
+    - AMRSA/error
+    - AMRSA/kernel
+    - AMRSA/openssl
+  - AMRSA/kernel (1.0.3):
+    - AMRSA/cipher
+    - AMRSA/error
+  - AMRSA/openssl (1.0.3)
 
 DEPENDENCIES:
   - AMRSA (from `../`)
-  - Expecta
-  - Expecta+Snapshots
-  - FBSnapshotTestCase
-  - Specta
 
 EXTERNAL SOURCES:
   AMRSA:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AMRSA: 8f7e9fabce41d6abbc1445e969ce3228bf23a114
-  Expecta: e1c022fcd33910b6be89c291d2775b3fe27a89fe
-  Expecta+Snapshots: dcff217eef506dabd6dfdc7864ea2da321fafbb8
-  FBSnapshotTestCase: '094f9f314decbabe373b87cc339bea235a63e07a'
-  Specta: f506f3a8361de16bc0dcf3b17b75e269072ba465
+  AMRSA: 130e9d0387878844b5916456b940d0c41b3576af
 
-PODFILE CHECKSUM: 505ed920fe2948b1a857e5b04a51a05e71b6a067
+PODFILE CHECKSUM: 9f567f9709cb3ecf163caf9445e3eaf525db99c1
 
 COCOAPODS: 1.2.0
