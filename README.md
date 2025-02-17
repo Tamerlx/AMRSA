@@ -31,10 +31,6 @@ it, simply add the following line to your Podfile:
 pod "AMRSA"
 ```
 
-## Author
-
-liuxu5, liuxu5@vipkid.com.cn
-
 ## License
 
 AMRSA is available under the MIT license. See the LICENSE file for more info.
